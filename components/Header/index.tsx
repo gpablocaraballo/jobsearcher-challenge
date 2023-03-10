@@ -53,7 +53,7 @@ export default function Header () {
             </CartSide>
         </ContainerNav>
         {modalVisible && <Modal margin="4%" onBackgroundClick={() => setModalVisible(false) }>
-          <ButtonBox onClick={() => setModalVisible(false) }>Close Favorites</ButtonBox>
+          <ButtonBox style={{ paddingTop: '10px', paddingBottom: '25px', paddingLeft: '10px', paddingRight: '10px' }} onClick={() => setModalVisible(false) }>Close Favorites</ButtonBox>
           <CartList />
         </Modal>}
 

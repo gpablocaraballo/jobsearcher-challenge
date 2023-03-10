@@ -31,7 +31,7 @@ export default function MainContainer () {
     }
   }
   const debouncedLoadJobs = useCallback(
-    debounce(loadJobs, 1000), [category])
+    debounce(loadJobs, 1200), [category])
 
   useEffect(() => {
     setCategory(state.category || CategoryType.ALL)

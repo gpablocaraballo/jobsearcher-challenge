@@ -17,7 +17,7 @@ const themeConfig = {
     Location: 'black',
     Operation: 'black',
     HeaderBorder: 'black',
-    DetailButton: 'blue',
+    DetailButton: '#ec5167',
     DetailButtonText: 'white',
     Background: 'rgba(0, 0, 0, 0.7)',
     LabelModal: 'white'
