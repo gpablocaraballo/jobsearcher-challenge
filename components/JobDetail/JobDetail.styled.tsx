@@ -109,6 +109,6 @@ export const ItemPrice = styled.div`
     display: flex;
 `
 
-export const CartOperationsContainer = styled.div`
+export const JobOperationsContainer = styled.div`
     width:80px;
 `

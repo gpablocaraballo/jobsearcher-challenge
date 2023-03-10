@@ -6,10 +6,10 @@ import {
   ImgUnvavailable,
   ItemName,
   CartLabels,
-  CartOperationsContainer
+  JobOperationsContainer
 } from './JobList.styled'
 import { FavoriteSchema } from '../../libs/models'
-import CartOperations from './CartOperations'
+import JobOperations from './JobOperations'
 
 interface ItemProp {
     item: FavoriteSchema
@@ -32,9 +32,9 @@ export default function CartItem ({ item }: ItemProp) {
           <ItemName style={{ height: '20px' }}>{item.job.title && item.job.title.substring(0, 45)}...</ItemName>
         </CartLabels>
       </CartListBody>
-      <CartOperationsContainer>
-        <CartOperations item={item.job} />
-      </CartOperationsContainer>
+      <JobOperationsContainer>
+        <JobOperations item={item.job} />
+      </JobOperationsContainer>
     </CartListItem>
   )
 }

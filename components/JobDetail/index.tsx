@@ -14,7 +14,7 @@ import {
   ImgDetail,
   ItemName,
   ItemDescription,
-  CartOperationsContainer
+  JobOperationsContainer
 } from './JobDetail.styled'
 import { LoadingBox, LabelBox, ButtonBox } from '../Common.styled'
 import { useAppContext } from '../../libs/context-lib'
@@ -22,7 +22,7 @@ import { APP_ACTIONS } from '../../libs/reducerAction-lib'
 import { getJobById, getRecommendations } from '../../libs/services'
 import { JobSchema } from '../../libs/models'
 import JobList from '../JobList'
-import CartOperations from '../JobList/CartOperations'
+import JobOperations from '../JobList/JobOperations'
 
 export default function JobDetail () {
   const { dispatch, state } = useAppContext()
@@ -91,10 +91,10 @@ export default function JobDetail () {
                 <DataContainerText>
                   <ItemName>{state.job.title}</ItemName>
                   <ItemDescription dangerouslySetInnerHTML={{ __html: state.job.description }} />
-                  <CartOperationsContainer>
-                    <CartOperations item={state.job}/>
+                  <JobOperationsContainer>
+                    <JobOperations item={state.job}/>
                     <ButtonBox style={{ width: '120px' }} onClick={onApplyClicked} >Apply now</ButtonBox>
-                  </CartOperationsContainer>
+                  </JobOperationsContainer>
                 </DataContainerText>
               </BodyContainer>
             </>

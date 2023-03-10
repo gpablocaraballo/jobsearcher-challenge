@@ -14,7 +14,7 @@ import {
 import { useAppContext } from '../../libs/context-lib'
 import { APP_ACTIONS } from '../../libs/reducerAction-lib'
 import { JobSchema } from '../../libs/models'
-import CartOperations from './CartOperations'
+import JobOperations from './JobOperations'
 
 interface ItemProp {
     item: JobSchema
@@ -46,7 +46,7 @@ export default function Item ({ item }: ItemProp) {
       <ItemFooter>
         <ButtonBox data-testid="Item-button-go-detail" onClick={onItemClicked}>Show Detail</ButtonBox>
       </ItemFooter>
-      <CartOperations item={item} />
+      <JobOperations item={item} />
     </ListItem>
   )
 }

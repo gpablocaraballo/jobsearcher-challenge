@@ -62,7 +62,7 @@ _Main components_
     JobList: Very useful component, its reused in to sectors, one is the main home page place to show all jobs and
     if we change the category its trigger the ajax request and update the context triggering the reducers.
 
-    JobList/CartOperations: Contains the actions to add to favorites or remove it from storage.
+    JobList/JobOperations: Contains the actions to add to favorites or remove it from storage.
 .
  ```
 

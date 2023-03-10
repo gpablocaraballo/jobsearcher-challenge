@@ -12,7 +12,7 @@ interface ItemProp {
     item: JobSchema
 }
 
-export default function CartOperations ({ item }: ItemProp) {
+export default function JobOperations ({ item }: ItemProp) {
   const { state, dispatch } = useAppContext()
 
   const onOperationIconClicked = () => {

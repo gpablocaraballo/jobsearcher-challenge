@@ -108,7 +108,7 @@ export const ItemFooter = styled.div`
   justify-content: space-between;
 `
 
-export const CartOperationsContainer = styled.div`
+export const JobOperationsContainer = styled.div`
   display: flex;
   width: 100%;
   margin-top: 10px;
