@@ -11,6 +11,7 @@ import { getCategories } from '../../libs/services'
 import { useAppContext } from '../../libs/context-lib'
 import { APP_ACTIONS } from '../../libs/reducerAction-lib'
 import { CategoryType, JobSchema, LocationType } from '../../libs/models'
+import { ParsedUrlQuery } from 'querystring'
 
 const Filters = () => {
   const { state, dispatch } = useAppContext()
@@ -42,6 +43,12 @@ const Filters = () => {
     loadCategories()
   }, [])
 
+  const isDetailPage = (query: ParsedUrlQuery) => {
+    if (query.id) {
+      return true
+    }
+    return false
+  }
   useEffect(() => {
     // usefull when you share the "url link" with your folks, its set the category based on the uri param
     const cat = get(query, 'cat', CategoryType.ALL)
@@ -63,6 +70,10 @@ const Filters = () => {
     const remoteValue = !remote
     setRemote(remoteValue)
     dispatch({ type: APP_ACTIONS.SET_JOBS, data: setJobs(state.jobs, remoteValue) })
+  }
+
+  if (isDetailPage(query)) {
+    return null
   }
 
   return (
