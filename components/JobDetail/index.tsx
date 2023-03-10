@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -15,7 +16,7 @@ import {
   ItemDescription,
   CartOperationsContainer
 } from './JobDetail.styled'
-import { LoadingBox, LabelBox } from '../Common.styled'
+import { LoadingBox, LabelBox, ButtonBox } from '../Common.styled'
 import { useAppContext } from '../../libs/context-lib'
 import { APP_ACTIONS } from '../../libs/reducerAction-lib'
 import { getJobById, getRecommendations } from '../../libs/services'
@@ -61,6 +62,10 @@ export default function JobDetail () {
     setImageFailed(false)
   }, [query])
 
+  const onApplyClicked = () => {
+    toast('Request for apply sent :)')
+  }
+
   return (
     <Container>
       {loading
@@ -79,18 +84,16 @@ export default function JobDetail () {
               <BodyContainer>
                 <DataContainerImage>
                   {state.job.image_url && state.job.image_url && !imageFailed
-                    ? (
-                    <ImgDetail src={get(state.job, 'image_url', '')} onError={() => setImageFailed(true)} />
-                      )
-                    : (
-                    <ImgUnvavailable width={200} height={200} src="/assets/no-image.png" alt="unavailable" />
-                      )}
+                    ? <ImgDetail src={get(state.job, 'image_url', '')} onError={() => setImageFailed(true)} />
+                    : <ImgUnvavailable width={200} height={200} src="/assets/no-image.png" alt="unavailable" />
+                  }
                 </DataContainerImage>
                 <DataContainerText>
                   <ItemName>{state.job.title}</ItemName>
                   <ItemDescription dangerouslySetInnerHTML={{ __html: state.job.description }} />
                   <CartOperationsContainer>
                     <CartOperations item={state.job}/>
+                    <ButtonBox style={{ width: '120px' }} onClick={onApplyClicked} >Apply now</ButtonBox>
                   </CartOperationsContainer>
                 </DataContainerText>
               </BodyContainer>

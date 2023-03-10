@@ -20,7 +20,9 @@ const themeConfig = {
     DetailButton: '#ec5167',
     DetailButtonText: 'white',
     Background: 'rgba(0, 0, 0, 0.7)',
-    LabelModal: 'white'
+    LabelModal: 'white',
+    FloatingTextMessage: 'white',
+    FloatingTextBackgroundMessage: '#ec5167'
   }
 }
 

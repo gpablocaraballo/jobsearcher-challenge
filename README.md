@@ -98,4 +98,10 @@ _Main components_
     IMPORTANT :) ->State management/localStorage: We use react context for the jobs and filters applied, 
     but for favorites/wish list is stay preserved in window.localStorage, so if we reload the page, the favorites
     is gonna exists anyway :)
+    others observations: I saw a few things: 
+    * the mock/json example did not have some fileds, 
+    * does not have logo of the companies (i added some randoms)
+    * some fields are with nulls
+    * i dont see the company name field
+    so in general i try to show some fields to get the idea, i dont show everything, because is a demo purpose so i think that for understanding the flow the fields on the UI are good enough i believe.
 ```

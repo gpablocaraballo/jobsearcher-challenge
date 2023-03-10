@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify'
 import Image from 'next/image'
 import {
   OperationContainer
@@ -18,10 +19,12 @@ export default function CartOperations ({ item }: ItemProp) {
     const favorite:any = state.favorites
     if (favorite[item.id]) {
       favorite[item.id] = null
+      toast('Favorite deleted')
     } else {
       favorite[item.id] = {
         job: item
       }
+      toast('Favorite added!')
     }
     dispatch({ type: APP_ACTIONS.UPDATE_JOB_FAVORITES, data: favorite })
     updateFavorites(favorite)

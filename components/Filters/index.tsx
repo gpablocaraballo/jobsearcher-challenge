@@ -73,7 +73,7 @@ const Filters = () => {
         </Select>
         <RemoteFilter>
           <Label>Remote</Label>
-          <input type="checkbox" checked={remote} onClick={onCheckboxClicked}/>
+          <input type="checkbox" checked={remote} onChange={onCheckboxClicked}/>
         </RemoteFilter>
       </Container>
   )
